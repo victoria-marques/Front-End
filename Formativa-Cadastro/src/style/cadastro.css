@@ -1,0 +1,276 @@
+/* Seção principal que envelopa o cadastro */
+#secao-cadastro {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.titulo-secao {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* O Card que divide o formulário em Duas Colunas (Desktop) */
+#card-cadastro {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Coluna da Foto e Coluna dos Campos */
+  gap: 40px;
+  padding: 40px;
+}
+
+/* ==========================================================================
+   COLUNA ESQUERDA: ÁREA DA FOTO
+   ========================================================================== */
+#area-foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #eceff1;
+  padding-right: 40px;
+}
+
+/* Container do Preview da Foto */
+#preview-container {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Proporção ideal para fotos de pratos */
+  background-color: #f8f9fa;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#preview-container:hover {
+  border-color: #ff6b6b;
+  background-color: #fff5f5;
+}
+
+/* Imagem renderizada no preview */
+#preview-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estado vazio da foto (ícone e texto) */
+#placeholder-foto {
+  text-align: center;
+  color: #64748b;
+}
+
+#placeholder-foto span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#placeholder-foto p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Botão de escolha por baixo da foto */
+.btn-foto {
+  background-color: #e2e8f0;
+  color: #334155;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-foto:hover {
+  background-color: #cbd5e1;
+}
+
+.info-campo {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   COLUNA DIREITA: CAMPOS DO FORMULÁRIO
+   ========================================================================== */
+#area-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.campo-grupo label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.obrigatorio {
+  color: #ef4444;
+}
+
+/* Estilização Geral de Inputs, Textarea e Select */
+.campo-grupo input[type="text"],
+.campo-grupo input[type="number"],
+.campo-grupo textarea,
+.campo-grupo select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1e293b;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Efeito de foco */
+.campo-grupo input:focus,
+.campo-grupo textarea:focus,
+.campo-grupo select:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+}
+
+/* Ajuste específico do Textarea */
+.campo-grupo textarea {
+  resize: vertical;
+}
+
+/* Contador de caracteres da descrição */
+.contador-chars {
+  font-size: 11px;
+  color: #64748b;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Linha Dupla (Preço e Categoria lado a lado) */
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   BOTÕES DE AÇÃO DO CADASTRO
+   ========================================================================== */
+.btn-cadastro-grupo {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.btn-cadastro-grupo button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* Botão Principal (Cadastrar) */
+.btn-principal {
+  background-color: #ff6b6b;
+  color: #ffffff;
+}
+
+.btn-principal:hover {
+  background-color: #ee5253;
+}
+
+/* Botão Secundário (Limpar) */
+.btn-secundario {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.btn-secundario:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Efeito de clique em ambos os botões */
+.btn-cadastro-grupo button:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   TOAST DE FEEDBACK
+   ========================================================================== */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none; /* Controlado pelo Javascript */
+}
+
+/* Classes dinâmicas do Toast */
+.toast.sucesso {
+  display: block;
+  background-color: #10b981;
+}
+
+.toast.erro {
+  display: block;
+  background-color: #ef4444;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+  #card-cadastro {
+    grid-template-columns: 1fr; /* Transforma o Grid em uma coluna só */
+    padding: 20px;
+    gap: 24px;
+  }
+
+  #area-foto {
+    border-right: none;
+    border-bottom: 1px solid #eceff1;
+    padding-right: 0;
+    padding-bottom: 24px;
+  }
+
+  .linha-dupla {
+    grid-template-columns: 1fr; /* Preço e categoria empilham no mobile */
+  }
+
+  .btn-cadastro-grupo {
+    flex-direction: column-reverse; /* Limpar fica embaixo do Cadastrar no mobile */
+  }
+}
